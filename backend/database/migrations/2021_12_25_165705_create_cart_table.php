@@ -17,8 +17,14 @@ class CreateCartTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('product_id');
+            $table->string('product_title');
+            $table->longText('product_description');
+            $table->decimal('product_price', 10,2);
+            $table->string('product_logo');
             $table->bigInteger('no_of_items');
+            $table->decimal('total_amount', 10,2);
             $table->tinyInteger('delete_flag');
+            $table->integer('order_status')->default(1); //pending
             $table->timestamps();
         });
     }
