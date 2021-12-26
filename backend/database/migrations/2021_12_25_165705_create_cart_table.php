@@ -15,15 +15,15 @@ class CreateCartTable extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');
-            $table->bigInteger('product_id');
-            $table->string('product_title');
-            $table->longText('product_description');
-            $table->decimal('product_price', 10,2);
-            $table->string('product_logo');
-            $table->bigInteger('no_of_items');
-            $table->decimal('total_amount', 10,2);
-            $table->tinyInteger('delete_flag');
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('product_id')->nullable();
+            $table->string('product_title')->nullable();
+            $table->longText('product_description')->nullable();
+            $table->decimal('product_price', 10,2)->nullable();
+            $table->string('product_logo')->nullable();
+            $table->bigInteger('no_of_items')->nullable();
+            $table->decimal('total_amount', 10,2)->default(0);
+            $table->tinyInteger('delete_flag')->nullable();
             $table->integer('order_status')->default(1); //pending
             $table->timestamps();
         });

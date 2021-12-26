@@ -32,7 +32,7 @@ Route::get('/suggest/{query}', 'ProductApiController@suggestProducts')->middlewa
 //USER Authentication API
 
 Route::post('/register', 'UserController@register')->middleware('cors');
-
+Auth::routes();
 Route::post('/login', 'UserController@login')->middleware('cors');
 
 Route::post('/show', 'UserController@showData')->middleware('cors');

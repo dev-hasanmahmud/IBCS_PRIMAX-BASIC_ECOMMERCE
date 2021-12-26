@@ -13,7 +13,7 @@ class UserController extends Controller {
 	public function login() {
 		if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 			$user = Auth::user();
-			$token = $user->createToken('MyApp')->accessToken;
+			$token = $user->createToken('fullaccess')->accessToken;
 			$jsonData = ['token' => $token, 'Message' => 'Login Successfull', 'Code' => 200];
 			return response($jsonData);
 		} else {
