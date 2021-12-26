@@ -10,7 +10,7 @@ class CartSummary extends Component {
             <h1>Total : </h1>
           </div>
           <div className="col-md-3" align="center">
-            <h1 className="" style={{background:`pink`}}><span style={{fontSize:25,color:`blue`}}>₹</span>{this.props.amount}</h1>
+            <h1 className="" style={{background:`pink`}}><span style={{fontSize:25,color:`blue`}}>$</span>{this.props.amount}</h1>
           </div>
           <div className="col-md-4" align="center">
             <Link to={{

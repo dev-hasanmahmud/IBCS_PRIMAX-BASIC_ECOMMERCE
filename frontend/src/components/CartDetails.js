@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Media from 'react-bootstrap/Media';
 import EmptyCart from './EmptyCart';
 import CartSummary from './CartSummary';
 class CartDetails extends Component {
@@ -120,11 +119,11 @@ class CartDetails extends Component {
               <dt><h2><mark>My Shopping Cart :</mark></h2></dt>
               <ul className="list-unstyled">
                 {items.map(item => (
-                  <Media as="li" className="cart-list-item" key={item.id} style={extraCSS}>
+                  <div as="li" className="cart-list-item" key={item.id} style={extraCSS}>
                       {/* <Link to={`/product?id=${item.id}`}> */}
-                          <img width={64} height={64} className="mr-3" style={{marginTop:20}} src={`/images/${item.product_logo }`} alt="File of Your Selected Item!" />
+                          <img width={64} height={64} className="mr-3" style={{marginTop:20}} src={`${item.product_logo }`} alt="File of Your Selected Item!" />
                       {/* </Link> */}
-                      <Media.Body>
+                      <div>
                           <div className="row" style={{marginTop:20}}>
                               <div className="col-md-2">
                                 <p>
@@ -155,8 +154,8 @@ class CartDetails extends Component {
                                 <button type="button" onClick={() => this.deleteItem(item.id)} className="btn btn-danger btn-sm deleteItem" data-name={`${item.id}`}>Delete</button>
                               </div>
                           </div>
-                      </Media.Body>
-                  </Media>
+                      </div>
+                  </div>
                 ))}                        
               </ul>
                   

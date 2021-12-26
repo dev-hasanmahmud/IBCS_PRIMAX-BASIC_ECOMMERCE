@@ -134,7 +134,7 @@ class SearchProducts extends Component
                                 <Col style={cardStyle} lg={3} key={item.id}>
                                     <Link to={`/product?id=${item.id}`}>
                                         <Card>
-                                            <Card.Img variant="top" src={`/images/${item.image }`} />
+                                            <Card.Img variant="top" src={`${item.image }`} />
                                             <Card.Body>
                                                 <Card.Title><b>{item.title}</b></Card.Title>
                                                 <Card.Text>

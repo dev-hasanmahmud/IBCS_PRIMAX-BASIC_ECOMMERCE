@@ -52,11 +52,11 @@ class Products extends Component
                             <Col style={cardStyle} lg={3} key={item.id}>
                                 <Link to={`/product?id=${item.id}`}>
                                     <Card>
-                                        <Card.Img variant="top" src={`/images/${item.image }`} />
+                                        <Card.Img variant="top" src={`${item.image }`} />
                                         <Card.Body>
                                             <Card.Title><b>{item.title}</b></Card.Title>
                                             <Card.Text>
-                                                <b>₹ : <span style = {amountStyle}>{item.price }</span></b>
+                                                <b>$<span style = {amountStyle}>{item.price }</span></b>
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>

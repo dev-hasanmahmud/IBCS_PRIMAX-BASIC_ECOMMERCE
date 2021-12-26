@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import OrderSuccessModel from './OrderSuccessModel';
 class BillingShipping extends Component {
     constructor(props) {
         super(props);
@@ -125,7 +124,7 @@ class BillingShipping extends Component {
         }
     }
     validateData(data) {
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var reg = '';
         if(!(isNaN(data['b_name'])) || !(isNaN(data['s_name']))) {
             console.log("Invalid Name, Please Enter proper Name");
             return false;
@@ -418,19 +417,19 @@ class BillingShipping extends Component {
                                            <tbody>
                                             <tr className="text-white">
                                                 <td align="right" width="40%"><label>Merchandise :</label></td>
-                                                <td> ₹ {this.state.total_amount}</td>
+                                                <td> $ {this.state.total_amount}</td>
                                             </tr>
                                             <tr className="text-white">
                                                 <td align="right"><label>Sales Tax :</label></td>
-                                                <td> ₹ {this.state.sales_tax}</td>
+                                                <td> $ {this.state.sales_tax}</td>
                                             </tr>
                                             <tr className="text-white">
                                                 <td align="right"><label>Shipping Charges :</label></td>
-                                                <td> ₹ {this.state.shipping_charges}</td>
+                                                <td> $ {this.state.shipping_charges}</td>
                                             </tr>
                                             <tr className="">
                                                 <td align="right"><h4>Final Amount :</h4></td>
-                                                <td><h1 style={{fontFamily:`Times New Roman`,fontWeight:`bold`,color:`#00FFFF`}}> <font style={{fontSize:20,color:`yellow`}}>₹</font> {this.state.total_amount + this.state.sales_tax + this.state.shipping_charges }</h1></td>
+                                                <td><h1 style={{fontFamily:`Times New Roman`,fontWeight:`bold`,color:`#00FFFF`}}> <font style={{fontSize:20,color:`yellow`}}>$</font> {this.state.total_amount + this.state.sales_tax + this.state.shipping_charges }</h1></td>
                                             </tr>
                                            </tbody>
                                         </table>

@@ -18,8 +18,7 @@ class ProductDetails extends Component {
         if (e.target.value === 0) {
             alert("Please select proper Quantity");
         } else {
-            // this.setState({ quantity : e.target.value } );
-            this.state.items.quantity = e.target.value;
+            this.setState({ quantity : e.target.value } );
             console.log(this.state.items.quantity);
         }        
     }
@@ -99,7 +98,7 @@ class ProductDetails extends Component {
                        <Row>
                             <Col style={cardStyle} lg={6}>
                                 <Card>
-                                    <Card.Img variant="top" src={`/images/${this.state.items.image}`} />
+                                    <Card.Img variant="top" src={`${this.state.items.image}`} />
                                 </Card>
                             </Col>
                             <Col lg={6}>
@@ -124,13 +123,12 @@ class ProductDetails extends Component {
                                         </tr>
                                         <tr>
                                             <td align="right">Product Amount : </td>
-                                            <td align="left"><h4 style={amountStyle}>₹ {this.state.items.price * this.state.items.quantity}</h4> </td>                                            
+                                            <td align="left"><h4 style={amountStyle}>${this.state.items.price}</h4> </td>                                            
                                         </tr>
                                         <tr>
                                             <td align="right">Select Quantity : </td>
                                             <td align="left">
                                                 <select className="form-control" onChange={this.updateCart}>
-                                                    <option value="0">Select Quantity</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
